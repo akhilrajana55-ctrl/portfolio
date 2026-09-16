@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Akhil Rajana | Silicon Lab</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#050608;color:#eef0f2;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.wrap{width:min(1240px,92vw);margin:auto}
+#pcb{position:fixed;inset:0;z-index:-5;background:#050608}.vignette{position:fixed;inset:0;z-index:-4;background:radial-gradient(circle at 72% 28%,rgba(180,190,200,.09),transparent 30%),linear-gradient(90deg,rgba(5,6,8,.98),rgba(5,6,8,.72),rgba(5,6,8,.92))}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,6,8,.72);border-bottom:1px solid #24292d;backdrop-filter:blur(18px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.18em;font-size:14px}.brand i{font-style:normal;color:#777}
+nav a{font-size:10px;letter-spacing:.18em;color:#8d959b;margin-left:25px;text-transform:uppercase}nav a:hover{color:#fff}
+.hero{min-height:100vh;padding-top:110px;display:grid;grid-template-columns:55% 45%;align-items:center;gap:10px}
+.kicker{font:10px monospace;letter-spacing:.3em;color:#747d83;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(58px,9vw,128px);line-height:.79;letter-spacing:-.075em;margin:0;font-weight:900}h1 em{font-style:normal;color:#6d757b}
+.intro{max-width:590px;color:#9ca5aa;font-size:16px;line-height:1.8;margin:28px 0}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:14px 20px;border:1px solid #41484d;font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:.25s}.btn:hover{transform:translateY(-4px);border-color:#c2c7ca}.primary{background:#edf0f1;color:#060708;border-color:#edf0f1}
+.stage{height:650px;position:relative;display:grid;place-items:center;perspective:1500px}.orbit{position:absolute;border:1px solid rgba(210,215,220,.13);border-radius:50%;transform:rotateX(68deg);animation:spin 18s linear infinite}.o1{width:510px;height:510px}.o2{width:400px;height:400px;animation-duration:13s;animation-direction:reverse}.o3{width:600px;height:600px;animation-duration:25s}@keyframes spin{to{transform:rotateX(68deg) rotateZ(360deg)}}
+.chip{width:370px;height:470px;position:relative;transform-style:preserve-3d;transition:transform .12s ease-out;filter:drop-shadow(30px 35px 55px rgba(0,0,0,.65))}
+.photo{position:absolute;inset:28px 25px;background:#111418;border:1px solid #535b61;padding:8px;transform:translateZ(45px)}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo:after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.15)}
+.chipbody{position:absolute;inset:0;border:1px solid #343b40;background:linear-gradient(145deg,#171b1e,#090b0c);transform:translateZ(0);clip-path:polygon(8% 0,92% 0,100% 8%,100% 92%,92% 100%,8% 100%,0 92%,0 8%)}
+.pin{position:absolute;width:25px;height:2px;background:#70797f;z-index:2}.p1{left:-25px;top:85px}.p2{left:-25px;top:120px}.p3{left:-25px;top:155px}.p4{right:-25px;top:290px}.p5{right:-25px;top:325px}.p6{right:-25px;top:360px}
+.readout{position:absolute;z-index:5;background:#090b0d;border:1px solid #353d42;padding:11px 14px;font-family:monospace;box-shadow:0 10px 30px #000;transform:translateZ(110px)}.readout b{display:block;font-size:17px}.readout small{font-size:8px;color:#727b81;letter-spacing:.15em}.r1{left:-55px;top:45px}.r2{right:-65px;top:125px}.r3{left:-70px;bottom:95px}.r4{right:-48px;bottom:35px}
+.status{position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);z-index:8;background:#090b0d;border:1px solid #343a3f;padding:9px 15px;font:9px monospace;letter-spacing:.13em;color:#aab1b5;white-space:nowrap}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#d7dbde;margin-right:7px;box-shadow:0 0 12px #fff}
+section{padding:120px 0;border-top:1px solid #202529}.sectionno{font:10px monospace;color:#697278;letter-spacing:.25em;margin-bottom:18px}.title{font-size:clamp(45px,6vw,82px);line-height:.86;letter-spacing:-.06em;margin:0 0 55px}.title span{color:#687177}
+.about{display:grid;grid-template-columns:38% 62%;gap:70px}.about p{font-size:22px;line-height:1.7;color:#b7bec3;margin:0}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#2a3034;margin-top:35px}.fact{background:#080a0b;padding:25px}.fact strong{font-size:32px;display:block}.fact small{color:#6f787e;font:9px monospace;letter-spacing:.15em}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill{min-height:250px;padding:25px;border:1px solid #292f33;background:linear-gradient(150deg,#111518,#080a0b);position:relative;overflow:hidden;transition:.35s}.skill:hover{transform:translateY(-10px) rotateX(5deg) rotateY(-4deg);border-color:#697278}.skill:before{content:"";position:absolute;right:-50px;bottom:-50px;width:140px;height:140px;border:1px solid #30373b;border-radius:50%}.skill .num{font:9px monospace;color:#697177}.skill h3{margin-top:55px;font-size:16px}.skill p{font-size:13px;color:#858e94;line-height:1.7}
+.projects{display:grid;gap:16px}.project{display:grid;grid-template-columns:65px 1fr 120px;gap:20px;padding:30px;border:1px solid #292f33;background:rgba(10,12,13,.82);transition:.3s}.project:hover{transform:translateX(8px);border-color:#697177}.project .yr{font:10px monospace;color:#70797f}.project h3{margin:0 0 10px;font-size:20px}.project p{margin:0;color:#8d969b;font-size:13px;line-height:1.75}.tag{height:max-content;border:1px solid #3b4247;padding:7px 8px;text-align:center;font:8px monospace;color:#939ca1}
+.edu{display:grid;grid-template-columns:1fr 2fr;gap:70px}.line{border-left:1px solid #363d42;padding-left:30px}.entry{position:relative;margin-bottom:42px}.entry:before{content:"";position:absolute;left:-35px;top:5px;width:8px;height:8px;border-radius:50%;background:#d9dde0;box-shadow:0 0 15px #fff}.entry h3{margin:0;font-size:17px}.entry p{color:#858e94;font-size:13px;line-height:1.7}
+.contact{text-align:center}.contact .title{margin-bottom:20px}.contact p{max-width:600px;margin:0 auto 30px;color:#8e979c;line-height:1.7}.contact .actions{justify-content:center}footer{padding:25px 0;border-top:1px solid #22282c;color:#687177;font:9px monospace;letter-spacing:.15em}.foot{display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(35px);transition:.8s}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:115px}.stage{height:540px;order:-1}.chip{width:300px;height:390px}.o1{width:380px;height:380px}.o2{width:300px;height:300px}.o3{width:450px;height:450px}.r1{left:-20px}.r2{right:-20px}.r3{left:-25px}.r4{right:-15px}.about,.edu{grid-template-columns:1fr;gap:35px}.skills{grid-template-columns:repeat(2,1fr)}.project{grid-template-columns:50px 1fr}.tag{grid-column:2;width:max-content}.foot{flex-direction:column;gap:10px}}
+@media(max-width:560px){.skills{grid-template-columns:1fr}.stage{height:500px}.chip{width:270px;height:350px}.readout{padding:8px 10px}.r1{left:-5px}.r2{right:-5px}.r3{left:-5px}.r4{right:-5px}.facts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<canvas id="pcb"></canvas><div class="vignette"></div>
+<header><div class="wrap nav"><a class="brand" href="#home">AKHIL<i>.R</i></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div></div></header>
+
+<main>
+<section class="hero wrap" id="home">
+<div class="reveal">
+<div class="kicker">SYSTEM / ECE-2027 / ONLINE</div>
+<h1>BUILD.<br><em>SIMULATE.</em><br>LEARN.</h1>
+<p class="intro">Electronics & Communication Engineering student exploring VLSI, CMOS circuit design, Analog IC Design and embedded electronics through hands-on engineering projects.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore Work</a><a class="btn" href="assets/Akhil_Rajana_Resume.pdf" target="_blank">Open Resume ↗</a></div>
+</div>
+<div class="stage reveal">
+<div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+<div class="chip" id="chip">
+<div class="chipbody"></div><div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div><div class="pin p4"></div><div class="pin p5"></div><div class="pin p6"></div>
+<div class="photo"><img src="assets/profile.jpg" alt="Akhil Rajana"></div>
+<div class="readout r1"><small>CGPA</small><b>8.77</b></div><div class="readout r2"><small>CORE</small><b>VLSI</b></div><div class="readout r3"><small>EDA</small><b>CADENCE</b></div><div class="readout r4"><small>NODE</small><b>45nm</b></div>
+<div class="status"><span class="dot"></span>DESIGN MODE / ACTIVE</div>
+</div>
+</div>
+</section>
+
+<section id="about"><div class="wrap reveal"><div class="sectionno">01 / PROFILE</div><h2 class="title">ENGINEERING<br><span>THE NEXT</span><br>IDEA.</h2><div class="about"><div></div><div><p>I’m an Electronics & Communication Engineering student at RNS Institute of Technology, Bengaluru. I’m building my foundation in CMOS, analog IC design, VLSI, semiconductor devices and embedded electronics by combining coursework with practical projects and circuit simulation.</p><div class="facts"><div class="fact"><strong>8.77</strong><small>CGPA / 10</small></div><div class="fact"><strong>45 nm</strong><small>CMOS PROJECT</small></div><div class="fact"><strong>03</strong><small>PROJECTS</small></div><div class="fact"><strong>2027</strong><small>GRADUATION</small></div></div></div></div></div></section>
+
+<section id="skills"><div class="wrap reveal"><div class="sectionno">02 / KNOWLEDGE MAP</div><h2 class="title">MY<br><span>TOOLBOX.</span></h2><div class="skills">
+<div class="skill"><div class="num">01 / SILICON</div><h3>VLSI & IC DESIGN</h3><p>VLSI fundamentals, CMOS circuit design, analog IC design, semiconductor devices and IC layout basics.</p></div>
+<div class="skill"><div class="num">02 / CIRCUITS</div><h3>ELECTRONICS</h3><p>Analog electronics, digital electronics, circuit analysis, timing circuits, simulation and hardware debugging.</p></div>
+<div class="skill"><div class="num">03 / CODE</div><h3>PROGRAMMING</h3><p>C, Embedded C, Verilog and Python for electronics and digital-design work.</p></div>
+<div class="skill"><div class="num">04 / EDA</div><h3>DESIGN TOOLS</h3><p>Cadence Virtuoso, circuit simulation, RTL fundamentals, timing analysis and verification fundamentals.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap reveal"><div class="sectionno">03 / BUILD LOG</div><h2 class="title">SELECTED<br><span>PROJECTS.</span></h2><div class="projects">
+<div class="project"><div class="yr">2026</div><div><h3>Power- & Energy-Efficient High-Gain Dynamic Comparator</h3><p>Working on a 45-nm CMOS dynamic comparator using Stacking Floating Inverter Amplifier architecture in Cadence Virtuoso, studying gain, noise, power and energy efficiency.</p></div><div class="tag">45nm / ONGOING</div></div>
+<div class="project"><div class="yr">2025</div><div><h3>GSM-Based Traffic Signal Override</h3><p>Developed an Arduino and SIM800L based emergency-vehicle traffic override system using secure code-based communication, keypad, LEDs and Embedded C.</p></div><div class="tag">EMBEDDED</div></div>
+<div class="project"><div class="yr">2024</div><div><h3>Traffic Light Circuit Using 555 Timer IC</h3><p>Designed a sequential traffic light circuit using a 555 timer, resistors, capacitors and LEDs for red, yellow and green signal timing.</p></div><div class="tag">CIRCUITS</div></div>
+</div></div></section>
+
+<section id="education"><div class="wrap reveal"><div class="sectionno">04 / LEARNING PATH</div><h2 class="title">EDUCATION<br><span>& TRAINING.</span></h2><div class="edu"><div></div><div class="line">
+<div class="entry"><h3>RNS Institute of Technology — B.E. Electronics & Communication Engineering</h3><p>2023–2027 · CGPA 8.77 / 10 · Bengaluru, Karnataka</p></div>
+<div class="entry"><h3>NIELIT Bootcamp — RTL, IP Integration & SoC Signoff</h3><p>February 2026 · 30-hour training program</p></div>
+<div class="entry"><h3>Analog IC Design Certification — VTU Centre for Online Education</h3><p>August 2026 · CMOS op-amp, negative feedback, stability, phase margin, noise, mismatch and compensated amplifiers.</p></div>
+</div></div></div></section>
+
+<section id="contact"><div class="wrap contact reveal"><div class="sectionno">05 / CONNECT</div><h2 class="title">LET'S<br><span>BUILD.</span></h2><p>Open to learning opportunities and engineering roles involving electronics, VLSI, analog IC design and semiconductor technology.</p><div class="actions"><a class="btn primary" href="mailto:akhil.rajana55@gmail.com">Email ↗</a><a class="btn" href="https://www.linkedin.com/in/akhil-rajana-484085294" target="_blank">LinkedIn ↗</a><a class="btn" href="assets/Akhil_Rajana_Resume.pdf" target="_blank">Resume ↗</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 AKHIL RAJANA</span><span>ECE / VLSI / CMOS / ANALOG IC</span></div></footer>
+
+<script>
+const c=document.getElementById('pcb'),x=c.getContext('2d');let W,H,dpr,pts=[],lines=[],lights=[];
+function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);make()}function make(){pts=[];lines=[];lights=[];let cols=Math.ceil(W/180)+2,rows=Math.ceil(H/140)+2;for(let y=0;y<rows;y++)for(let i=0;i<cols;i++)pts.push({x:i*180+(y%2)*50,y:y*140+35});pts.forEach((a,i)=>{pts.filter((b,j)=>j!=i&&Math.hypot(a.x-b.x,a.y-b.y)<230).sort((u,v)=>Math.hypot(a.x-u.x,a.y-u.y)-Math.hypot(a.x-v.x,a.y-v.y)).slice(0,2).forEach(b=>{if(Math.random()<.55)lines.push([a,b])})});for(let i=0;i<35&&lines.length;i++)lights.push({l:lines[i%lines.length],q:Math.random()})}
+function draw(){x.clearRect(0,0,W,H);lines.forEach(([a,b])=>{x.strokeStyle='rgba(190,200,208,.08)';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);let m=(a.x+b.x)/2;x.lineTo(m,a.y);x.lineTo(m,b.y);x.lineTo(b.x,b.y);x.stroke()});pts.forEach(p=>{x.fillStyle='rgba(220,225,228,.22)';x.beginPath();x.arc(p.x,p.y,1.7,0,7);x.fill()});lights.forEach(z=>{z.q+=.002;if(z.q>1)z.q=0;let[a,b]=z.l,m=(a.x+b.x)/2,q=z.q,px,py;if(q<.5){px=a.x+(m-a.x)*q*2;py=a.y}else{px=m;py=a.y+(b.y-a.y)*(q-.5)*2}x.fillStyle='#e8ecef';x.shadowBlur=12;x.shadowColor='#fff';x.beginPath();x.arc(px,py,2,0,7);x.fill();x.shadowBlur=0});requestAnimationFrame(draw)}resize();addEventListener('resize',resize);draw();
+const chip=document.getElementById('chip');document.querySelector('.stage').addEventListener('pointermove',e=>{let r=chip.getBoundingClientRect(),mx=(e.clientX-r.left)/r.width-.5,my=(e.clientY-r.top)/r.height-.5;chip.style.transform=`rotateY(${mx*15}deg) rotateX(${-my*15}deg)`});document.querySelector('.stage').addEventListener('pointerleave',()=>chip.style.transform='');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
